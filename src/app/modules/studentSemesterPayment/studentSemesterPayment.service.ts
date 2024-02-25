@@ -4,7 +4,7 @@ import { CoreService } from '../../../shared/axios';
 
 const getMyPayment = async (req: Request): Promise<IGenericResponse> => {
   const response: IGenericResponse = await CoreService.get(
-    '/student-semester-payments',
+    '/student-semester-payments/my-semester-payments',
     {
       params: req.query,
       headers: {
@@ -18,8 +18,9 @@ const getMyPayment = async (req: Request): Promise<IGenericResponse> => {
 const initiatePayment = async (req: Request): Promise<IGenericResponse> => {
   const response: IGenericResponse = await CoreService.post(
     '/student-semester-payments/initiate-payment',
+    req.body,
     {
-      params: req.body,
+      // params: req.body,
       headers: {
         Authorization: req.headers.authorization
       }
@@ -31,8 +32,9 @@ const initiatePayment = async (req: Request): Promise<IGenericResponse> => {
 const completePayment = async (req: Request): Promise<IGenericResponse> => {
   const response: IGenericResponse = await CoreService.post(
     '/student-semester-payments/complete-payment',
+    req.body,
     {
-      params: req.body,
+      // params: req.body,
       headers: {
         Authorization: req.headers.authorization
       }
@@ -40,8 +42,6 @@ const completePayment = async (req: Request): Promise<IGenericResponse> => {
   );
   return response;
 };
-
-
 
 export const StudentSemesterPaymentService = {
   getMyPayment,

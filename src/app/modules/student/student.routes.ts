@@ -20,7 +20,7 @@ router.get(
   auth(ENUM_USER_ROLE.STUDENT),
   StudentController.getMyCourseSchedules
 );
-router.get('/:id', StudentController.getByIdFromDB);
+
 router.get('/:id', StudentController.getByIdFromDB);
 
 router.patch(

@@ -21,6 +21,7 @@ const getStudentMarks = async (req: Request, res: Response, next: NextFunction) 
 };
 
 const updateMarks = async (req: Request, res: Response, next: NextFunction) => {
+  console.log('hitting api-gateway controller');
   try {
     const result = await StudentEnrolledCourseMarkService.updateMarks(req);
     sendResponse(res, result);

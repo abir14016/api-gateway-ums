@@ -26,7 +26,8 @@ const getStudentMarks = async (req: Request): Promise<IGenericResponse> => {
 };
 
 const updateMarks = async (req: Request): Promise<IGenericResponse> => {
-  const response: IGenericResponse = await CoreService.post(
+  console.log('hitting api-gateway service');
+  const response: IGenericResponse = await CoreService.patch(
     `/student-enrolled-course-marks/update-marks`,
     req.body,
     {
@@ -39,7 +40,7 @@ const updateMarks = async (req: Request): Promise<IGenericResponse> => {
 };
 
 const updateCourseFinalMarks = async (req: Request): Promise<IGenericResponse> => {
-  const response: IGenericResponse = await CoreService.post(
+  const response: IGenericResponse = await CoreService.patch(
     `/student-enrolled-course-marks/update-final-marks`,
     req.body,
     {
